@@ -94,7 +94,7 @@
     });
 
     if (!('IntersectionObserver' in window) || spokojnie) {
-      document.querySelectorAll('.wjazd').forEach(function (n) { n.classList.add('widac'); });
+      document.querySelectorAll('.wjazd, .siatka-wjazd').forEach(function (n) { n.classList.add('widac'); });
       document.querySelectorAll('.usluga__ikona.rysuj').forEach(function (n) { n.classList.add('gotowa'); });
       return;
     }
@@ -103,13 +103,14 @@
       wpisy.forEach(function (w) {
         if (!w.isIntersecting) return;
         w.target.classList.add('widac');
-        var ikona = w.target.querySelector('.usluga__ikona.rysuj');
-        if (ikona) ikona.classList.add('gotowa');
+        w.target.querySelectorAll('.usluga__ikona.rysuj').forEach(function (i) {
+          i.classList.add('gotowa');
+        });
         obs.unobserve(w.target);
       });
     }, { threshold: 0.16, rootMargin: '0px 0px -60px 0px' });
 
-    document.querySelectorAll('.wjazd').forEach(function (n) { obs.observe(n); });
+    document.querySelectorAll('.wjazd, .siatka-wjazd').forEach(function (n) { obs.observe(n); });
   })();
 
   /* ----------------------------------------------------------------------
@@ -278,8 +279,8 @@
       tory.siec.classList.add('gra');
       tory.siec.classList.toggle('wstecz', !dzien);
 
-      opisDom.textContent = dzien ? 'zasila panele' : 'zasila magazyn';
-      opisSiec.textContent = dzien ? 'oddaje nadwyżkę' : 'dobiera brakujące';
+      opisDom.textContent = dzien ? 'zasilany z paneli' : 'zasilany z magazynu';
+      opisSiec.textContent = dzien ? 'odbiera nadwyżkę' : 'dopina brakujące';
 
       pulpit.querySelectorAll('button').forEach(function (b) {
         var wybrany = b.dataset.pora === pora;

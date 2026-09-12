@@ -138,9 +138,9 @@
 
   <div class="wrap hero__tresc">
     <p class="etykieta">Odnawialne źródła energii · Sława</p>
-    <h1>Fotowoltaika, pompa ciepła i podłogówka — <em>od doboru mocy po uruchomienie</em></h1>
+    <h1>Fotowoltaika, pompa ciepła, podłogówka — <em>jedna ekipa</em></h1>
     <p class="hero__lead">
-      Robimy całość jedną ekipą: projekt, montaż, hydraulika, zasilanie i rozruch.
+      Prąd, ciepło i wentylacja z jednej ręki: projekt, montaż, hydraulika, zasilanie i rozruch.
       Moc dobieramy pod realne zużycie w Twoim domu, a nie pod cennik.
     </p>
 
@@ -228,6 +228,16 @@
           <p class="mono" style="margin:14px 0 0; text-transform:none; letter-spacing:.02em; color:var(--szary); line-height:1.7">
             Magazyn zatrzymuje prąd z paneli na wieczór, zamiast oddawać go do sieci za ułamek wartości.
           </p>
+        </div>
+
+        <div class="wchodzi">
+          <span class="mono">W wycenie dostajesz</span>
+          <ul>
+            <li>dobór mocy pod Twoje roczne zużycie</li>
+            <li>pomiar dachu i sprawdzenie rozdzielnicy</li>
+            <li>cenę z materiałem i robocizną, bez dopisek</li>
+            <li>termin wejścia ekipy</li>
+          </ul>
         </div>
       </div>
 
@@ -322,9 +332,10 @@
           <path class="rys" d="M60 300 L150 176 H330 L262 300 Z"/>
           <path class="rys" d="M100 246h192M150 176l-45 124M210 176l-32 124M270 176l-20 124"/>
           <path class="rys" d="M120 300v34M240 300v34M96 334h48M216 334h48"/>
-          <text x="60" y="366">Panele na dachu</text>
-          <text class="wart" x="60" y="388" id="s-panele-w">6,0 kWp</text>
         </g>
+        <!-- opis zostaje poza grupą, żeby nie gasł razem z panelami wieczorem -->
+        <text x="60" y="366">Panele na dachu</text>
+        <text class="wart" x="60" y="388" id="s-panele-w">6,0 kWp</text>
 
         <!-- FALOWNIK -->
         <g>
@@ -399,9 +410,9 @@
       <p class="oloowek">Jedna ekipa robi prąd, ciepło i wentylację — nie trzeba spinać trzech firm i trzech terminów.</p>
     </div>
 
-    <div class="zakres">
+    <div class="zakres siatka-wjazd">
 
-      <article class="usluga wjazd">
+      <article class="usluga" style="--i:0">
         <span class="usluga__nr">01</span>
         <svg class="usluga__ikona rysuj" viewBox="0 0 48 48" aria-hidden="true">
           <path d="M4 32 L11 14h20l-4 18z"/>
@@ -414,7 +425,7 @@
         <p>Dach i grunt. Konstrukcja, panele, falownik, zabezpieczenia, zgłoszenie do zakładu energetycznego i uruchomienie.</p>
       </article>
 
-      <article class="usluga wjazd o1">
+      <article class="usluga" style="--i:1">
         <span class="usluga__nr">02</span>
         <svg class="usluga__ikona rysuj" viewBox="0 0 48 48" aria-hidden="true">
           <path d="M7 16h34v24H7z"/>
@@ -426,7 +437,7 @@
         <p>Nadwyżka z paneli zostaje u Ciebie na wieczór, zamiast iść do sieci za ułamek swojej wartości.</p>
       </article>
 
-      <article class="usluga wjazd o2">
+      <article class="usluga" style="--i:2">
         <span class="usluga__nr">03</span>
         <svg class="usluga__ikona rysuj" viewBox="0 0 48 48" aria-hidden="true">
           <path d="M5 11h38v26H5z"/>
@@ -439,7 +450,7 @@
         <p>Dobór mocy pod metraż i ocieplenie, jednostka zewnętrzna, cała hydraulika, rozruch i ustawienie krzywej grzewczej.</p>
       </article>
 
-      <article class="usluga wjazd o3">
+      <article class="usluga" style="--i:3">
         <span class="usluga__nr">04</span>
         <svg class="usluga__ikona rysuj" viewBox="0 0 48 48" aria-hidden="true">
           <circle cx="24" cy="24" r="10"/>
@@ -451,19 +462,21 @@
         <p>Ciepła woda użytkowa ze słońca: kolektory, zasobnik, automatyka i zabezpieczenia przed przegrzaniem.</p>
       </article>
 
-      <article class="usluga wjazd">
+      <article class="usluga" style="--i:4">
         <span class="usluga__nr">05</span>
         <svg class="usluga__ikona rysuj" viewBox="0 0 48 48" aria-hidden="true">
           <path d="M5 22 24 7l19 15"/>
           <path d="M10 22v19h28V22"/>
-          <path d="M15 36c0-5 0-9 0-12M22 36V24M29 36V24M36 36V24"/>
-          <path d="M11 39c2-2 4 2 6 0s4 2 6 0 4 2 6 0 4 2 6 0"/>
+          <path d="M16 36V25M16 25l-2.5 3M16 25l2.5 3"/>
+          <path d="M24 36V25M24 25l-2.5 3M24 25l2.5 3"/>
+          <path d="M32 36V25M32 25l-2.5 3M32 25l2.5 3"/>
+          <path d="M11 40c2-2.2 4 2.2 6 0s4 2.2 6 0 4 2.2 6 0 4 2.2 6 0"/>
         </svg>
         <h3>Ogrzewanie podłogowe</h3>
         <p>Pętle, rozdzielacze, sterowanie, próba ciśnieniowa i regulacja przepływów — żeby grzało równo w całym domu.</p>
       </article>
 
-      <article class="usluga wjazd o1">
+      <article class="usluga" style="--i:5">
         <span class="usluga__nr">06</span>
         <svg class="usluga__ikona rysuj" viewBox="0 0 48 48" aria-hidden="true">
           <circle cx="21" cy="24" r="15"/>
@@ -476,7 +489,7 @@
         <p>Wentylacja mechaniczna z odzyskiem ciepła razem z gruntowym wymiennikiem — świeże powietrze bez wyrzucania ciepła oknem.</p>
       </article>
 
-      <article class="usluga wjazd o2">
+      <article class="usluga" style="--i:6">
         <span class="usluga__nr">07</span>
         <svg class="usluga__ikona rysuj" viewBox="0 0 48 48" aria-hidden="true">
           <path d="M14 27 24 18l10 9"/>
@@ -491,7 +504,7 @@
         <p>Każde pomieszczenie grzeje wtedy, kiedy ma grzać. Sterowanie z telefonu, harmonogramy i podgląd zużycia.</p>
       </article>
 
-      <article class="usluga wjazd o3">
+      <article class="usluga" style="--i:7">
         <span class="usluga__nr">08</span>
         <svg class="usluga__ikona rysuj" viewBox="0 0 48 48" aria-hidden="true">
           <path d="M30 6a9 9 0 0 0-11 12L7 30a4 4 0 0 0 6 6l12-12A9 9 0 0 0 37 13l-6 6-5-5z"/>
@@ -515,53 +528,53 @@
       <p class="oloowek">Zdjęcia z naszych montaży — bez stocku i bez wizualizacji. Kliknij, żeby powiększyć.</p>
     </div>
 
-    <div class="galeria" id="galeria">
-      <button class="kafel k-duzy wjazd" data-duze="img/r-farma-zmierzch.webp" data-podpis="Instalacja fotowoltaiczna na dachu — widok o zmierzchu">
+    <div class="galeria siatka-wjazd" id="galeria">
+      <button class="kafel k-duzy style="--i:0" data-duze="img/r-farma-zmierzch.webp" data-podpis="Instalacja fotowoltaiczna na dachu — widok o zmierzchu">
         <img src="img/r-farma-zmierzch-sm.webp" alt="Instalacja fotowoltaiczna na dachu o zmierzchu" loading="lazy">
         <span class="kafel__opis"><span>Fotowoltaika na dachu skośnym</span><span class="mono">01</span></span>
       </button>
 
-      <button class="kafel k-sredni wjazd o1" data-duze="img/r-dom-dach.webp" data-podpis="Panele na dachu domu jednorodzinnego">
+      <button class="kafel k-sredni style="--i:1" data-duze="img/r-dom-dach.webp" data-podpis="Panele na dachu domu jednorodzinnego">
         <img src="img/r-dom-dach-sm.webp" alt="Panele fotowoltaiczne na dachu domu jednorodzinnego" loading="lazy">
         <span class="kafel__opis"><span>Dom jednorodzinny</span><span class="mono">02</span></span>
       </button>
 
-      <button class="kafel k-sredni wjazd o2" data-duze="img/r-dom-ceglany.webp" data-podpis="Instalacja na dachu domu z czerwonej cegły">
+      <button class="kafel k-sredni style="--i:2" data-duze="img/r-dom-ceglany.webp" data-podpis="Instalacja na dachu domu z czerwonej cegły">
         <img src="img/r-dom-ceglany-sm.webp" alt="Instalacja fotowoltaiczna na dachu domu z cegły" loading="lazy">
         <span class="kafel__opis"><span>Montaż na dachówce</span><span class="mono">03</span></span>
       </button>
 
-      <button class="kafel k-maly wjazd" data-duze="img/r-falownik.webp" data-podpis="Falownik i zabezpieczenia w kotłowni">
+      <button class="kafel k-maly style="--i:3" data-duze="img/r-falownik.webp" data-podpis="Falownik i zabezpieczenia w kotłowni">
         <img src="img/r-falownik-sm.webp" alt="Falownik i rozdzielnica instalacji fotowoltaicznej" loading="lazy">
         <span class="kafel__opis"><span>Falownik i zabezpieczenia</span><span class="mono">04</span></span>
       </button>
 
-      <button class="kafel k-maly wjazd o1" data-duze="img/r-magazyn.webp" data-podpis="Magazyn energii z falownikiem hybrydowym">
+      <button class="kafel k-maly style="--i:4" data-duze="img/r-magazyn.webp" data-podpis="Magazyn energii z falownikiem hybrydowym">
         <img src="img/r-magazyn-sm.webp" alt="Magazyn energii zamontowany przy falowniku" loading="lazy">
         <span class="kafel__opis"><span>Magazyn energii</span><span class="mono">05</span></span>
       </button>
 
-      <button class="kafel k-szeroki wjazd o2" data-duze="img/r-grunt.webp" data-podpis="Instalacja fotowoltaiczna na gruncie">
+      <button class="kafel k-szeroki style="--i:5" data-duze="img/r-grunt.webp" data-podpis="Instalacja fotowoltaiczna na gruncie">
         <img src="img/r-grunt-sm.webp" alt="Instalacja fotowoltaiczna na konstrukcji gruntowej" loading="lazy">
         <span class="kafel__opis"><span>Instalacja na gruncie</span><span class="mono">06</span></span>
       </button>
 
-      <button class="kafel k-szeroki wjazd" data-duze="img/r-kolektory.webp" data-podpis="Kolektory słoneczne na dachu">
+      <button class="kafel k-szeroki style="--i:6" data-duze="img/r-kolektory.webp" data-podpis="Kolektory słoneczne na dachu">
         <img src="img/r-kolektory-sm.webp" alt="Kolektory słoneczne zamontowane na dachu" loading="lazy">
         <span class="kafel__opis"><span>Kolektory słoneczne</span><span class="mono">07</span></span>
       </button>
 
-      <button class="kafel k-sredni wjazd o1" data-duze="img/r-podlogowka-1.webp" data-podpis="Pętle ogrzewania podłogowego przed wylewką">
+      <button class="kafel k-sredni style="--i:7" data-duze="img/r-podlogowka-1.webp" data-podpis="Pętle ogrzewania podłogowego przed wylewką">
         <img src="img/r-podlogowka-1-sm.webp" alt="Pętle ogrzewania podłogowego rozłożone przed wylewką" loading="lazy">
         <span class="kafel__opis"><span>Podłogówka — rozkładanie pętli</span><span class="mono">08</span></span>
       </button>
 
-      <button class="kafel k-sredni wjazd o2" data-duze="img/r-podlogowka-3.webp" data-podpis="Ogrzewanie podłogowe w pokoju">
+      <button class="kafel k-sredni style="--i:8" data-duze="img/r-podlogowka-3.webp" data-podpis="Ogrzewanie podłogowe w pokoju">
         <img src="img/r-podlogowka-3-sm.webp" alt="Ogrzewanie podłogowe rozłożone w pokoju" loading="lazy">
         <span class="kafel__opis"><span>Podłogówka — pokój dzienny</span><span class="mono">09</span></span>
       </button>
 
-      <button class="kafel k-duzy wjazd o3" data-duze="img/r-proba.webp" data-podpis="Próba ciśnieniowa instalacji przed wylewką">
+      <button class="kafel k-duzy style="--i:9" data-duze="img/r-proba.webp" data-podpis="Próba ciśnieniowa instalacji przed wylewką">
         <img src="img/r-proba-sm.webp" alt="Próba ciśnieniowa instalacji grzewczej" loading="lazy">
         <span class="kafel__opis"><span>Próba ciśnieniowa przed wylewką</span><span class="mono">10</span></span>
       </button>
@@ -577,23 +590,23 @@
       <h2>Wiesz, na czym stoisz, na każdym etapie</h2>
     </div>
 
-    <div class="kroki">
-      <article class="krok wjazd">
+    <div class="kroki siatka-wjazd">
+      <article class="krok" style="--i:0">
         <span class="krok__nr">01</span>
         <h3>Rozmowa i dane o domu</h3>
         <p>Metraż, ocieplenie, roczne zużycie prądu i czym dziś grzejesz. Z tego wychodzi, czy sens ma fotowoltaika, pompa ciepła, czy jedno i drugie.</p>
       </article>
-      <article class="krok wjazd o1">
+      <article class="krok" style="--i:1">
         <span class="krok__nr">02</span>
         <h3>Oględziny i wycena</h3>
         <p>Przyjeżdżamy zobaczyć dach i kotłownię. Cena obejmuje materiał i robociznę — znasz ją przed montażem, nie po.</p>
       </article>
-      <article class="krok wjazd o2">
+      <article class="krok" style="--i:2">
         <span class="krok__nr">03</span>
         <h3>Montaż i podłączenie</h3>
         <p>Konstrukcja, panele albo jednostka pompy, hydraulika, zasilanie i sterowanie. Termin ustawiamy tak, żeby dom nie został bez ciepłej wody.</p>
       </article>
-      <article class="krok wjazd o3">
+      <article class="krok" style="--i:3">
         <span class="krok__nr">04</span>
         <h3>Rozruch i przekazanie</h3>
         <p>Uruchamiamy układ, ustawiamy parametry i pokazujemy obsługę na miejscu. Zostajesz z dokumentami, gwarancją i numerem na wypadek pytań.</p>
@@ -625,8 +638,8 @@
       </div>
     </div>
 
-    <div class="opinie">
-      <article class="opinia wjazd">
+    <div class="opinie siatka-wjazd">
+      <article class="opinia" style="--i:0">
         <blockquote>Z czystym sumieniem mogę polecić Pana Filipa i potwierdzić pozostałe pozytywne opinie o firmie Woźniewski Instalacje — od pierwszego kontaktu, przez ustalenia zakresu prac i planowanie, aż po realizację zlecenia.</blockquote>
         <footer>
           <span class="opinia__inicjal">MS</span>
@@ -637,7 +650,7 @@
         </footer>
       </article>
 
-      <article class="opinia wjazd o1">
+      <article class="opinia" style="--i:1">
         <blockquote>Instalacja pompy ciepła i podłogówki przebiegła bezproblemowo i w uzgodnionym terminie, kontakt z wykonawcą jest bardzo dobry na każdym etapie realizacji, zdecydowanie polecam.</blockquote>
         <footer>
           <span class="opinia__inicjal">F</span>
@@ -648,7 +661,7 @@
         </footer>
       </article>
 
-      <article class="opinia wjazd o2">
+      <article class="opinia" style="--i:2">
         <blockquote>Serdecznie polecam Filipa jako dobrego wykonawcę. Ja już dwa razy korzystałem z jego usług w zakresie ogrzewania podłogowego i jestem zadowolony ze współpracy.</blockquote>
         <footer>
           <span class="opinia__inicjal">MP</span>
