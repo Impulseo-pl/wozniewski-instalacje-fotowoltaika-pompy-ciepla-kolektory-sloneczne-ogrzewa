@@ -206,8 +206,9 @@
         produkcja * auto * CENA_KWH +
         produkcja * (1 - auto) * CENA_KWH * WARTOSC_ODDANEJ;
 
-      // nie obiecujemy więcej, niż klient dziś płaci za prąd
-      var sufit = rachunek * 12 * 1.05;
+      // Nie obiecujemy więcej, niż klient dziś płaci — opłaty stałe za dystrybucję
+      // zostają na rachunku niezależnie od tego, ile wyprodukuje dach.
+      var sufit = rachunek * 12 * 0.85;
       if (oszczednosc > sufit) oszczednosc = sufit;
 
       pokaz(pola.moc, moc, 1);
