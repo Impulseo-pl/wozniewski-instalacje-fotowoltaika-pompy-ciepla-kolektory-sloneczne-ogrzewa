@@ -593,6 +593,12 @@ input[type=range]::-moz-range-thumb{
   .stopka__rzad{ grid-template-columns:1fr; gap:28px; }
   .hero{ min-height:auto; padding-top:120px; }
   .hero__tresc{ padding-bottom:64px; }
+
+  /* adres e-mail nie mieści się obok etykiety na wąskim ekranie */
+  .dane li{ flex-direction:column; gap:6px; align-items:flex-start; }
+  .dane .mono{ flex:none; }
+  .dane b{ font-size:15px; word-break:break-word; }
+  .pasek__poz b{ font-size:16px; }
 }
 
 @media (max-width:520px){
