@@ -26,6 +26,7 @@
     function koniec() {
       el.classList.add('znika');
       document.body.style.overflow = '';
+      if (window.przegladajWjazdy) window.przegladajWjazdy();
       setTimeout(function () { el.remove(); }, 900);
     }
 
@@ -99,18 +100,40 @@
       return;
     }
 
+    function odslon(el) {
+      el.classList.add('widac');
+      el.querySelectorAll('.usluga__ikona.rysuj').forEach(function (i) {
+        i.classList.add('gotowa');
+      });
+    }
+
     var obs = new IntersectionObserver(function (wpisy) {
       wpisy.forEach(function (w) {
         if (!w.isIntersecting) return;
-        w.target.classList.add('widac');
-        w.target.querySelectorAll('.usluga__ikona.rysuj').forEach(function (i) {
-          i.classList.add('gotowa');
-        });
+        odslon(w.target);
         obs.unobserve(w.target);
       });
-    }, { threshold: 0.16, rootMargin: '0px 0px -60px 0px' });
+    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.wjazd, .siatka-wjazd').forEach(function (n) { obs.observe(n); });
+    var doOdsloniecia = [].slice.call(document.querySelectorAll('.wjazd, .siatka-wjazd'));
+    doOdsloniecia.forEach(function (n) { obs.observe(n); });
+
+    // Zabezpieczenie: gdy strona startuje z kotwicą (#kontakt) albo pod zasłoną
+    // ekranu ładowania, obserwator potrafi policzyć pozycje zanim układ się ustali
+    // i nigdy nie odpalić. Poniższy przegląd dolicza to, co i tak jest w kadrze.
+    function dolicz() {
+      var h = window.innerHeight;
+      doOdsloniecia = doOdsloniecia.filter(function (n) {
+        if (n.classList.contains('widac')) return false;
+        var r = n.getBoundingClientRect();
+        if (r.top < h - 40 && r.bottom > 0) { odslon(n); obs.unobserve(n); return false; }
+        return true;
+      });
+    }
+    window.przegladajWjazdy = dolicz;
+    window.addEventListener('load', dolicz);
+    window.addEventListener('scroll', dolicz, { passive: true });
+    setTimeout(dolicz, 1200);
   })();
 
   /* ----------------------------------------------------------------------
