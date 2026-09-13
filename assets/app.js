@@ -143,9 +143,15 @@
     var suwak = document.getElementById('rachunek');
     if (!suwak) return;
 
-    var CENA_KWH = 1.10;      // zł brutto za kWh, taryfa domowa
-    var UZYSK = 1000;         // kWh rocznie z 1 kWp w naszym rejonie
-    var WARTOSC_ODDANEJ = 0.55; // ile realnie wraca z nadwyżki oddanej do sieci
+    // Cena, po której klient dziś kupuje kWh — z niej odtwarzamy roczne zużycie.
+    var CENA_KWH = 1.10;
+    // Ile kWh rocznie daje 1 kWp w naszym rejonie.
+    var UZYSK = 1000;
+    // Na kWh zjedzonej u siebie oszczędzamy energię i zmienną część dystrybucji,
+    // ale nie opłaty stałe — stąd 0,95 zł, a nie pełne 1,10 zł.
+    var ZYSK_U_SIEBIE = 0.95;
+    // Za kWh oddaną do sieci net-billing płaci cenę rynkową, czyli grubo mniej.
+    var ZYSK_ODDANEJ = 0.40;
 
     var txt = document.getElementById('rachunek-txt');
     var pola = {
@@ -203,8 +209,8 @@
       var auto = zMagazynem ? 0.65 : 0.30;
 
       var oszczednosc =
-        produkcja * auto * CENA_KWH +
-        produkcja * (1 - auto) * CENA_KWH * WARTOSC_ODDANEJ;
+        produkcja * auto * ZYSK_U_SIEBIE +
+        produkcja * (1 - auto) * ZYSK_ODDANEJ;
 
       // Nie obiecujemy więcej, niż klient dziś płaci — opłaty stałe za dystrybucję
       // zostają na rachunku niezależnie od tego, ile wyprodukuje dach.
